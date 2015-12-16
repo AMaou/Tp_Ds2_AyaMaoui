@@ -1,0 +1,31 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ app.request.basepath }}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mymovies</title>
+</head>
+<body>
+    <div class="container">
+        
+        <ul>
+            {% for mymovie in mymovies %}
+            <ul>
+             <li>{{ mymovie.title }}</li>
+             <li> {{ mymovie.shortDescription }}</li>
+
+            </ul>
+               
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+{% endblock %}
